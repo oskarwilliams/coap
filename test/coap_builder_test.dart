@@ -253,9 +253,9 @@ defaultPort: 5683
           final yamlContent = await File(
             'example/config/coap_config.yaml',
           ).readAsString();
-          final dartContent = await File(
+          final dartContent = (await File(
             'example/config/coap_config.dart',
-          ).readAsString();
+          ).readAsString()).replaceAll('\r\n', '\n');
 
           await testBuilder(
             builder,
